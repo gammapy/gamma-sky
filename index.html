@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+
+<link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" charset="utf-8"></script>
+
+<head>
+
+  <title>Gamma-sky</title>
+
+</head>
+
+<body>
+
+  <div id="aladin-lite-div"></div>
+
+  <!-- <button id="aboutButton" onclick="showAboutInfo()">About</button> -->
+  <button id="aboutButton">About</button>
+
+  <div id="aboutInfo">
+
+    <p>gamma-sky.net is an open-source and open-data webpage about the gamma-ray sky.</p>
+
+    <p>More coming soon!</p>
+
+    <p>Created by <a href="https://github.com/cdeil" target="_blank">Christoph Deil</a> and
+       <a href="https://github.com/vorugantia" target="_blank">Arjun Voruganti</a>.</p>
+
+    <p>If you would like to contribute, check out <a href="https://github.com/gammapy/gamma-sky" target="_blank">our repo</a>
+       or email us.</p>
+
+  </div>
+
+</body>
+
+<style>
+
+#aladin-lite-div {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+
+}
+
+#aboutButton {
+  color: black;
+  position: absolute;
+  border: none;
+  background-color: white;
+  opacity: 0.8;
+  z-index: 10;
+  bottom: 3px;
+  font-size: 14px;
+  padding: 4 4 4 4;
+  border: 2px solid rgb(50, 50, 50);
+}
+
+#aboutInfo {
+  position: absolute;;
+  width: 410px;
+  bottom: 35px;
+  right: 100px;
+  padding: 0 1em 0 1em;
+  border: 2px solid rgb(50, 50, 50);
+  background-color: white;
+  opacity: 0.8;
+  display: none;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+
+}
+
+div { display: inline-block; }
+
+</style>
+
+<script type="text/javascript" src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.js" charset="utf-8"></script>
+<!-- TODO: make src .min.js -->
+
+<script src="script.js" charset="utf-8"></script>
