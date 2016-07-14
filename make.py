@@ -11,8 +11,9 @@ def cli():
 @cli.command()
 def catalog():
     """Make catalog data"""
-    # gammasky.make_3fgl_catalog_data()
+    gammasky.make_3fgl_catalog_data()
     gammasky.make_2fhl_catalog_data()
+    gammasky.make_snrcat_catalog_data()
 
 
 @cli.command()
