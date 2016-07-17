@@ -1,0 +1,25 @@
+#aboutButton {
+  color: black;
+  position: absolute; /*This was commented out before*/
+  border: none;
+  background-color: white;
+  opacity: 0.8;
+  z-index: 10;
+  bottom: 3px;
+  font-size: 14px;
+  padding: 4 4 4 4;
+  height: 30px;
+  border: 2px solid rgb(50, 50, 50);
+}
+
+#aboutInfo {
+  position: absolute;
+  width: 410px;
+  bottom: 38px;
+  right: 100px;
+  padding: 0 1em 0 1em;
+  border: 2px solid rgb(50, 50, 50);
+  background-color: white;
+  opacity: 0.9;
+  display: none;
+}
