@@ -43,7 +43,12 @@ export class CatSearchComponent implements OnInit {
     let items = [];
 
     this.catalogService.getCatalogTeV()
-      .subscribe(catalog => makeSearchItems(catalog, items, 'common_name'));
+      .subscribe(catalog => {
+        makeSearchItems(catalog, items, 'common_name');
+        makeSearchItemsForList(catalog, items, 'fermi_names');
+        makeSearchItemsForList(catalog, items, 'gamma_names');
+        makeSearchItemsForList(catalog, items, 'other_names');
+      });
     this.options = items;
 
     this.catalogService.getCatalog3FHL()
@@ -96,5 +101,22 @@ function makeSearchItems(catalog, items, nameCol = 'Source_Name') {
       id: catalog.data[i]['source_id'].toString(),
       name: catalog.data[i][nameCol],
     });
+  }
+}
+
+// Creates separate search entries for "other names" lists
+function makeSearchItemsForList(catalog, items, nameCol) {
+  for(let i = 0; i < catalog.data.length; i++) {
+    let entry = catalog.data[i][nameCol];
+    if(entry.length != 0) {
+      let entries = entry.split(',');
+      for(let x in entries) {
+        items.push({
+          cat: catalog.catName,
+          id: catalog.data[i]['source_id'].toString(),
+          name: entries[x]
+        });
+      }
+    }
   }
 }

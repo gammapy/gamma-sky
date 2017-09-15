@@ -70,7 +70,7 @@ def make_tev_catalog_data():
 
     cat = SourceCatalogGammaCat(filename='input_data/gammacat.fits.gz')
     cols = ['source_id', 'common_name', 'ra', 'dec', 'glon', 'glat',
-            'other_names', 'classes']
+            'gamma_names', 'fermi_names', 'other_names', 'classes']
     cat.table = cat.table[cols]
     data = cat._data_python_list
 
