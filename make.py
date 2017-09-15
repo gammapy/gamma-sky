@@ -91,6 +91,29 @@ def maps():
     gammasky.make_maps_data()
 
 
+@cli.group()
+def fetch():
+    """Fetch input data files"""
+
+
+@fetch.command('cats')
+def fetch_cats():
+    """Fetch all source catalog files"""
+    gammasky.fetch_all_cats()
+
+
+@fetch.command('maps')
+def fetch_maps():
+    """Fetch all input files to make maps"""
+    gammasky.fetch_all_cats()
+
+
+@fetch.command('all')
+def fetch_all():
+    """Fetch all data files"""
+    gammasky.fetch_all_data()
+
+
 @cli.command()
 @click.pass_context
 def all(ctx):
@@ -111,13 +134,8 @@ def test_dataset(ctx, sources):
     ctx.forward(source_3fgl)
 
 
-@cli.command('fetch-data')
-def fetch_data():
-    """Dump input data files"""
-    gammasky.fetch_all_data()
-
-
 if __name__ == '__main__':
     import logging
+
     logging.basicConfig(level=logging.INFO)
     cli()

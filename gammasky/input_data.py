@@ -2,12 +2,18 @@ import subprocess
 import click
 
 __all__ = [
-    'fetch_all_data'
+    'fetch_all_data',
+    'fetch_all_cats',
+    'fetch_all_maps',
 ]
 
 
 def fetch_all_data():
-    # Catalogs
+    fetch_all_cats()
+    fetch_all_maps()
+
+
+def fetch_all_cats():
     fetch_data(
         'https://github.com/gammapy/gammapy-extra/raw/master/datasets/catalogs/fermi/gll_psch_v11.fit.gz',
         '3fhl.fits.gz'
@@ -21,7 +27,8 @@ def fetch_all_data():
         'gammacat.fits.gz',
     )
 
-    # Maps
+
+def fetch_all_maps():
     fetch_data(
         'https://github.com/gammapy/gammapy-fermi-lat-data/raw/master/fermi-hgps/fermi_hgps_counts_hpx.fits.gz',
         'fermi_hgps_counts_hpx.fits.gz',

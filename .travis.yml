@@ -44,7 +44,7 @@ before_script:
 - npm install
 
 script:
-- python make.py fetch-data
+- python make.py fetch all
 - python make.py test-dataset
 - ng build
 - ng e2e
