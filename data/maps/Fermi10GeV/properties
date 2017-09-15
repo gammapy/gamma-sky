@@ -14,5 +14,5 @@ dataproduct_subtype = color
 hips_rgb_red        = 10-30GeV
 hips_rgb_green      = 30-100GeV
 hips_rgb_blue       = 100-2000GeV
-hips_glu_tag        = P-Fermi-10GeV.hpx
+# hips_glu_tag        = P-Fermi-10GeV.hpx
     
