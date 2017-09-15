@@ -36,6 +36,10 @@
 
       <br>
       <h4><b>Model Info</b></h4>
+      <p>
+        Note: in 3FHL every source was fitted with a power-law and log parabola spectrum,
+          and both fit paramters are given, whether there is significant curvature or not.
+      </p>
       <ul>
         <li>Significance (10 GeV - 2 TeV): {{source.format(d.Signif_Avg, false)}}</li>
         <li>Npred: {{source.format(d.Npred, true)}}</li>
@@ -51,22 +55,20 @@
       </div>
 
       <ul>
+        <li>Significance curvature: {{source.format(d.Signif_Curve, true)}}</li>
         <li>Spectrum type: {{d.SpectrumType}}</li>
-        <ul>
-          <li>Spectral index: {{source.format_error(d.Spectral_Index, d.Unc_Spectral_Index, false)}}</li>
-          <li *ngIf="source.spec_type == 'LogParabola'">Beta: {{source.format_error(d.beta, d.Unc_beta, false)}}</li>
-          <li>Pivot energy: {{source.format(d.Pivot_Energy, true, 'GeV')}}</li>
-          <li>Flux density at pivot energy: {{source.format_error(d.Flux_Density, d.Unc_Flux_Density, true, 'cm-2 s-1 GeV-1')}}
-          </li>
-        </ul>
+        <li>Power law spectral index: {{source.format_error(d.PowerLaw_Index, d.Unc_PowerLaw_Index, false)}}</li>
+        <li>Log parabola spectral index: {{source.format_error(d.Spectral_Index, d.Unc_Spectral_Index, false)}}</li>
+        <!--<li *ngIf="source.spec_type == 'LogParabola'">Beta: {{source.format_error(d.beta, d.Unc_beta, false)}}</li>-->
+        <li>Log parabola beta: {{source.format_error(d.beta, d.Unc_beta, false)}}</li>
+        <li>Pivot energy: {{source.format(d.Pivot_Energy, true, 'GeV')}}</li>
+        <li>Flux density at pivot energy: {{source.format_error(d.Flux_Density, d.Unc_Flux_Density, true, 'cm-2 s-1 GeV-1')}}
       </ul>
 
       <ul>
-        <li>Power law index: {{source.format_error(d.PowerLaw_Index, d.Unc_PowerLaw_Index, false)}}</li>
         <li>Integral flux (10 GeV - 1 TeV): {{source.format_error(d.Flux, d.Unc_Flux, true, 'cm-2 s-1')}}</li>
         <li>Energy flux (10 GeV - 1 TeV): {{source.format_error(d.Energy_Flux, d.Unc_Energy_Flux, true, 'erg cm-2 s-1')}}
         </li>
-        <li>Significance curvature: {{source.format(d.Signif_Curve, true)}}</li>
       </ul>
 
       <br>
