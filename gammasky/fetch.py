@@ -15,7 +15,7 @@ def fetch_all_data():
 
 def fetch_all_cats():
     fetch_data(
-        'https://github.com/gammapy/gammapy-extra/raw/master/datasets/catalogs/fermi/gll_psch_v11.fit.gz',
+        'https://github.com/gammapy/gammapy-extra/raw/master/datasets/catalogs/fermi/gll_psch_v13.fit.gz',
         '3fhl.fits.gz'
     )
     fetch_data(
